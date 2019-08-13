@@ -653,13 +653,7 @@ $('#opc-1').on('click','#regresainic', function(){
 function Opcionper(){
     $('#THeader').css('display','none');
         $('#Publica').empty();
-        $('#Publica').append(`<i class="IcoLogo"></i><div class="Top-text col-min full-primary" >Espere ...</div><div class="versi let-ter">Versión 1.0.0</div>
-                               
-                              <label class="contain" id="terminos">Aceptar terminos y condiciones.
-                                  <input type="checkbox" value="1" checked>
-                                  <span class="checkmark"></span>
-                                </label>
-                              </div>`);
+        $('#Publica').append(`<i class="IcoLogo"></i><div class="Top-text col-min full-primary" >Espere ...</div><div class="versi let-ter">Versión 1.0.0</div>`);
     var app = localStorage.getItem('apps');
     var dom = localStorage.getItem('dominio');
     if(navigator.onLine){
