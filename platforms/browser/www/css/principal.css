@@ -1,0 +1,73 @@
+/*
+    Estilo principal
+    -Color de fondo
+    -Color dominante. 
+    -colo letra primario, segundario, terciario y opcional.
+    -tipo de letra.
+    -tamaño letra: letra primario, segundario, terciario y opcional.
+*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    font-family: 'Agenci', sans-serif;
+}
+@font-face{
+    font-family:'Agenci';
+    src: local('Agenci'),
+         url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+.ColorFondo{
+    background-color: #FFF;
+}
+.ColorDominante{
+    background-color: #F4511E;
+}
+.col-primary{
+    color: #333;
+}
+.col-seg{
+    color: #222;
+}
+.col-ter{
+    color: #fff;
+}
+.col-min{
+   color:#F4511E;
+}
+.full-primary{
+    font-size: 18px;
+}
+.let-primary{
+    font-size: 14px;
+}
+.let-seg{
+    font-size: 12px;
+}
+.let-ter{
+    font-size: 10px;
+}
+.let-min{
+    font-size: 8px;
+}
+.bg-bold{
+    font-weight: bold;
+}
+
+/*listas y formularios*/
+
+li.btn-inmenu:active{
+    background-color: #F4511E;
+    color: white;
+    font-weight: bold;
+}
+li.btn-inmenur:active{
+    background-color: #FFF;
+    color: #F4511E;
+    font-weight: bold;
+}
+
+#Search{
+    background-color: #F4511E;
+}

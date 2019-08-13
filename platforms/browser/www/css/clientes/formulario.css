@@ -1,0 +1,60 @@
+.username{
+    text-align: left;
+    padding-left: 4%;
+    font-size: 90%;
+    display: inline-block;
+    margin-top: 20px;
+}
+.nomb, .apell{
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 4%;
+    font-size: 90%;
+    color: #5DADE2;
+    display: inline-block;
+}
+.nick-u, .nomb-u, .apell-u{
+    margin-top: 2px;
+    width: 94%;
+    margin-left: 3%;
+    height: 40px;
+    border: 1px solid #eee;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-radius: 4px; 
+}
+.nick-u:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.nomb-u:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.apell-u:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+#InfoAliasCorre, #InfoNombre, #InfoApell{
+    display: inline-block;
+    width: 94%;
+    margin-left: 3%;
+}
+#center-btn{
+    display: inline-block;
+    margin-top: 15px;
+    width: 94%;
+    margin-left: 3%;
+}

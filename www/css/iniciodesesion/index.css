@@ -1,0 +1,165 @@
+.username, .pass-u{
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 4%;
+    font-size: 90%;
+}
+.username{
+    display: inline-block;
+    margin-top: 20px;
+}
+.usernam{
+    margin-top: 5px;
+    text-align: left;
+    padding-left: 4%;
+    font-size: 90%;
+    display: inline-block;
+}
+.nick-u, .mail-u, .asun, .pass-r, .motiv-r{
+    margin-top: 5px;
+    width: 94%;
+    margin-left: 3%;
+    height: 40px;
+    border: 1px solid #eee;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-radius: 4px; 
+}
+.descric{
+    margin-top: 5px;
+    width: 94%;
+    margin-left: 3%;
+    height: 100px;
+    border: 1px solid #eee;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-radius: 4px;
+    resize: none;
+}
+.nick-u:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.mail-u:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.asun:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.descric:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.pass-r:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.motiv-r:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+#InfoAliasCorre, #InfoContras, #InfoCambio{
+    display: inline-block;
+    width: 94%;
+    margin-left: 3%;
+}
+.passk-u{
+    display: block;
+    margin-top: 5px;
+    width: 86%;
+    margin-left: 3%;
+    height: 40px;
+    border: 1px solid #eee;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-radius: 4px;
+    float: left;
+}
+.passk-u:focus {
+    outline: 0;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid #AAB7B8;
+    box-shadow: 2px 2px #eee;
+	border-color: #ccc;
+}
+.ico-pass{
+    margin-left: 2%;
+    margin-top: 15px;
+    width: 20px;
+    height: 20px;
+    background: url(../../img/ojo-per.png);
+    background-size: 20px 20px;
+    float: left;
+}
+.Olv, .Aly, .Regis{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 90%;
+    width: 100%;
+    display: block;
+    float: left;
+}
+.Aly{
+    margin-top: 20px;
+}
+.Regis{
+    margin-top: 15px;
+}
+#En-sub{
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #CCC;
+    outline: none;
+    outline-color: none;
+    outline-style: none;
+    z-index: 1000;
+    box-shadow: 0 0 1em #ccc;
+}
+.ico-send{
+    display: block;
+    margin-top: 0px;
+    width: 18px;
+    height: 18px;
+    background: url(../../img/next.png);
+    background-size: 18px 18px;
+    margin-left: 15px;
+}
+
+/*formulario datos */
+
+#Infonombreape, #Infotele, #InfoCor, #InfoAliasCort, #InfoCorreo, #InfoAsunto, #InfoDescri{
+    display: inline-block;
+    width: 94%;
+    margin-left: 3%;
+}

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="tienda.simple.muestra" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Device">
+        <param name="browser-package" value="Device" />
+    </feature>
+    <feature name="BackgroundMode">
+        <param name="browser-package" value="BackgroundMode" />
+    </feature>
+    <name>Tienda simple</name>
+    <description>
+       Automatización de negocios
+    </description>
+    <author email="desarrollosimple@gmail.com" href="https://sakuraitachi.com/">
+        Dsimple Team
+    </author>
+    <icon src="icon.png" />
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="KeepRunning" value="true" />
+    <preference name="BackgroundColor" value="#FCFCFC" />
+    <preference name="SplashScreenBackgroundColor" value="#FCFCFC" />
+    <preference name="StatusBarBackgroundColor" value="#F4511E" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="phonegap-version" value="cli-9.0.0" />
+    <preference name="android-targetSdkVersion" value="28" />
+    <preference name="orientation" value="portrait" />
+    <preference name="SplashScreenDelay" value="3000" />
+</widget>

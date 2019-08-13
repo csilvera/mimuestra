@@ -1,0 +1,21 @@
+li{
+    list-style: none;
+}
+.btn-menu{
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 6px;
+    height: 35px;
+    padding: 8px;
+    border: 1px solid #eee;
+}
+.text-menu{
+    float: left;
+}
+.icon-in{
+    float: right;
+    width: 18px;
+    height: 18px;
+    background: url('../../img/down-chevron.png');
+    background-size: 18px 18px;
+}

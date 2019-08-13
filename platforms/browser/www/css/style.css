@@ -1,0 +1,746 @@
+body{
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; 
+    font-family: 'Agenci', sans-serif;
+}
+
+/*header*/
+
+#THeader{
+    position:fixed;
+    z-index: 10;
+    top: 10px;
+    left:3%;
+    border-radius: 4px;
+    width: 94%;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 0 1em #ccc;
+}
+#opc-1{
+    float: left;
+    margin-left: 6%;
+}
+#opc-2{
+    float: right;
+    margin-right: 6%;
+}
+#text-1{
+    width: 64%;
+    height: 30px;
+    border: none;
+    margin-left: 4%;
+    margin-top: 10px;
+    color: #FFF;
+    float: left;
+    font-weight: 800;
+    text-align: left;
+}
+.iconos{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 6%;
+    background: url('../img/menu-1.png');
+    background-size: 18px 18px;
+}
+.iconos-reg{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 6%;
+    background: url('../img/anterior.png');
+    background-size: 18px 18px;
+}
+.iconos-izq{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 6%;
+    background: url('../img/menu-izq.png');
+    background-size: 18px 18px;
+}
+
+/*Main*/
+.contenidos{
+    display: inline-block;
+    margin-left: 2.5%;
+    width: 95%;
+}
+#Publica{
+    margin-top: 6px;
+}
+.up{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../img/up.png);
+    background-size: 18px 18px;
+    margin: auto;
+    margin-top: 10px;
+}
+.inestado{
+    position: fixed;
+    z-index: 90px;
+    padding: 8px;
+    font-size: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #FFF;
+    border-radius: 3px;
+    width: 55%;
+    left: 25%;
+    bottom: 15%;
+    box-shadow: 3px 3px #EEE;
+}
+
+/*Pie de pagina*/
+footer{
+    position: fixed;
+    display: none;
+    z-index: 100;
+    width: 100%;
+    height: 40px;
+    bottom: 0px;
+}
+.btn-top{
+    position: fixed;
+    bottom: 5%;
+    right: 4%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+}
+
+/*Menu*/
+.Despl-menu{
+    position: fixed;
+    z-index: 150;
+    top: 65px;
+    left: -80%;
+    width: 80%;
+    bottom: 0px;
+    overflow: auto;
+}
+.Despl-menu-izq{
+    position: fixed;
+    z-index: 140;
+    top: 65px;
+    right: -80%;
+    width: 80%;
+    bottom: 0px;
+    background-color: #FFF;
+    border: 1px solid #eee;
+    overflow: auto;
+}
+.Cuadro-men{
+    position: fixed;
+    display: none;
+    z-index: 101;
+    width: 80%;
+    padding: 15px;
+    top: 15%;
+    left: 10%;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px #ccc;
+    background-color: #FFF;
+    border-radius: 4px;
+}
+.text-m{
+    padding-top: 15px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}
+#Negativo{
+    margin-left: 5%;
+}
+#Negativo, #Positivo{
+    display: block;
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    float: left;
+    font-size: 80%;
+    padding-bottom: 10px;
+}
+#Positivo{
+    margin-left: 10%;
+}
+
+/*Opciones*/
+.Opciones{
+    position: fixed;
+    top: 70px;
+    left: 5%;
+    width: 90%;
+    height: auto;
+    display: none;
+}
+ul{
+    width: auto;
+}
+li, .tit-opc{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 4%;
+    background-color: #FFF;
+    margin-bottom: 2px;
+}
+.tit-opc{
+    text-align: center;
+    text-transform: uppercase;
+}
+.text-opc{
+    display: inline-block;
+    width: 100%;
+    padding-top: 3px;
+    text-align: center;
+}
+.text-opci{
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #FFF;
+}
+.text-canc{
+    display: inline-block;
+    width: 100%;
+    padding-top: 3px;
+    text-align: center;
+}
+
+/*Sin resultados */
+.SinR{
+    display: inline-block;
+    width: 96%;
+    margin-left: 2%;
+    padding: 8px;
+    text-align: center;
+    background-color: #F2F3F4;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/*Buscador */
+#Insearch{
+     float: left;   
+}
+#Search{
+    width: 100%;
+    height: 30px;
+    border: none;
+    margin-left: 2%;
+    outline-style: none;
+    color: #FFF;
+}
+#Search::placeholder {
+  color: white;
+}
+
+/*Estado */
+.Inestado{
+    display: none;
+    position: fixed;
+    z-index: 90px;
+    padding: 8px;
+    text-align: center;
+    background:rgba(51,51,51, 0.7);
+    color: #FFF;
+    border-radius: 3px;
+    width: 55%;
+    left: 25%;
+    bottom: 5%;
+    box-shadow: 3px 3px #EEE;
+}
+
+/*Opciones intergrales*/
+.appfser{
+    display: block;
+    margin: auto;
+    margin-top: 80px;
+    width: 128px;
+    height: 128px;
+    background: url('../img/signo-de.png');
+    background-size: 128px 128px;
+    margin-bottom: 30px;
+}
+.apprepara{
+    display: block;
+    margin: auto;
+    margin-top: 80px;
+    width: 128px;
+    height: 128px;
+    background: url('../img/reparar.png');
+    background-size: 128px 128px;
+    margin-bottom: 30px;
+}
+.appadv{
+    display: block;
+    margin-top: 10px;
+    margin-left: 5%;
+    width: 18px;
+    height: 18px;
+    background: url('../img/signo-de-exclamacion.png');
+    background-size: 18px 18px;
+    float: left;
+}
+.smservi{
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    padding: 5px;
+}
+.smservis{
+    display: block;
+    width: 70%;
+    padding-top: 10px;
+    margin-left: 4%;
+    text-align: justify;
+    float: left;
+}
+/*Primer acceso */
+
+.ValidC {
+    margin: auto;
+    display: block;
+    width: 40%;
+    height: 40px;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    padding:5px;
+    text-align: center;
+}
+.ValidC:focus {
+	border-color: #ccc;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(105,177,250, 0.25);
+}
+.Verusu{
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 700;
+}
+.psel{
+    padding: 5px;
+    text-align: center;
+}
+.SeleccionU{
+    margin-top:15px;
+    width: 100%;
+    height: auto;
+}
+
+/* Bienvenido */
+.IcoLogo{
+    display: block;
+    margin: auto;
+    width: 72px;
+    height: 72px;
+    margin-top: 60px;
+    background: url('../img/logoin.png');
+}
+.Top-text{
+    text-align: center;
+    margin-top: 50px;
+}
+.versi{
+    text-align: center;
+}
+#Empezar, #Infor, #DataB, #Stema, #Splan, #PubliSelecion, .Sinemprezar{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 25%;
+    width: 50%;
+    padding: 3px;
+    text-align: center;
+}
+#TipoReg, #RegStema, #PubliSelReg, #SplanReg{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 12.5%;
+    width: 35%;
+    padding: 3px;
+    text-align: center;
+}
+#TipoNe, #Stema, #PubliSelecion, #Splan{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 5%;
+    width: 35%;
+    padding: 3px;
+    text-align: center;
+}
+.pie-foo{
+    position: fixed;
+    bottom: 1%;
+    width: 100%;
+}
+.condici{
+    width: 80%;
+    text-align: center;
+    padding-left: 15%;
+}
+
+
+.contain {
+  display: block;
+  position: relative;
+  padding-top: 1px;
+  padding-left: 25px;
+  margin-bottom: 5px;
+  margin-left: 15%;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.contain input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+/* On mouse-over, add a grey background color */
+.contain:hover input ~ .checkmark {
+  background-color: #ccc;
+    text-decoration: underline;
+}
+
+/* When the checkbox is checked, add a blue background */
+.contain input:checked ~ .checkmark {
+  background-color: #F4511E;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.contain input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.contain .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/*Segunda parte*/
+
+.containe {
+  display: block;
+  position: relative;
+  padding-top: 1px;
+  padding-left: 25px;
+  margin-bottom: 5px;
+  margin-left: 4%;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containe input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+/* On mouse-over, add a grey background color */
+.containe:hover input ~ .checkmark {
+  background-color: #ccc;
+    text-decoration: underline;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containe input:checked ~ .checkmark {
+  background-color: #F4511E;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.containe input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.containe .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/*terminos*/
+.csi{
+    padding: 6px;
+    text-align: left;
+    padding-left: 2%;
+    margin-bottom: 1px;
+}
+
+/*informacion*/
+.lbi{
+    padding: 4px;
+    text-align: left;
+    width: 100%;
+}
+
+.not-f{
+    float: right;
+    padding-right: 4%;
+}
+
+/*Muestrame*/
+.fondo-cat{
+    display: block;
+    width: 96%;
+    margin-left: 2%;
+    height: 260px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 2px 2px #eee;
+    margin-bottom: 8px;
+}
+.opciones-hea{
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin-top: 1px;
+    margin-left: 1%;
+    float: left;
+}
+.text-cat{
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.Categoria-in{
+    width: 100%;
+    height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    font-size: 70%;
+     padding-left: 1%;
+    padding-right: 1%;
+}
+.Pre-in, .Est-in{
+    width: 100%;
+    padding-top: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 90%;
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.Pre-in{
+    font-weight: bold;
+}
+.Est-in{
+    padding-top: 2px;
+    font-size: 70%;
+}
+.OpcIn{
+    display: block;
+    width: 19%;
+    height: 30px;
+    margin-top: 1px;
+    margin-left: 1%;
+    float: left;
+}
+.mas-in, .in-gust{
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-left: 10%;
+    margin-top: 7px;
+}
+.in-gusta{
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-left: 10%;
+    margin-top: 7px;
+    background: url('../img/estrellas.png');
+    background-size: 18px 18px;
+}
+.mas-in{
+    background: url('../img/mas.png');
+    background-size: 18px 18px;
+}
+.in-gust{
+    background: url('../img/estrella.png');
+    background-size: 18px 18px;
+}
+.cat-imgs{
+    display: block;
+    width: 10%;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 2%;
+    border-radius: 50%;
+    background-size:100% 30px;
+    float: left;
+}
+.cat-img{
+    display: block;
+    width: 98%;
+    height: 184px;
+    margin-top: 2px;
+    margin-left: 1%;
+    background-size: 100% 184px;
+    float: left;
+}
+.opciones-cat{
+    display: block;
+    width: 79%;
+    height: 50px;
+    margin-top: 1px;
+    margin-left: 1%;
+    float: left;
+}
+
+/*Metodos*/
+.n-tra{
+    padding-left: 6%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/*Ubicación */
+.text-rep, .Prd-dato{
+    padding-top: 10px;
+    padding-left: 5%;
+    padding-bottom: 5px;
+}
+.Ubica-emp{
+    display: inline-block;
+    border: 1px solid #eee;
+    width: 89%;
+    height: 220px;
+    margin-top: 5px;
+    margin-left: 5%;
+    box-shadow: 0 0 1em #eee;
+}
+
+/*Horario de atencion*/
+.aten, .atent, .dedica{
+    padding-top: 15px;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: justify;
+}
+.atent, .dedica{
+    margin-top: 5px;
+}
+
+
+/*ayuda*/
+li.list-ay{
+    display: inline-block;
+    width: 97%;
+    margin-left: 1.3%;
+    height: 40px;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px #CCC;
+    padding: 0px;
+}
+.Txt-ay{
+    width: 100%;
+    padding-top: 4px;
+    padding-right: 3%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 3%;
+    text-transform: capitalize;
+}
+.fech-ay{
+    padding-right: 3%;
+    padding-left: 3%;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
