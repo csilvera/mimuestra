@@ -29,6 +29,7 @@ var app = {
     },
     onDeviceReady: function() {
         checkConnection();
+        welcome();
        Opcionper();
         document.addEventListener("backbutton", onBackKeyDown, false);
     },
@@ -651,9 +652,7 @@ $('#opc-1').on('click','#regresainic', function(){
     welcome();
 });
 function Opcionper(){
-    $('#THeader').css('display','none');
-        $('#Publica').empty();
-        $('#Publica').append(`<i class="IcoLogo"></i><div class="Top-text col-min full-primary" >Espere ...</div><div class="versi let-ter">Versión 1.0.0</div>`);
+    
     var app = localStorage.getItem('apps');
     var dom = localStorage.getItem('dominio');
     if(navigator.onLine){
@@ -664,10 +663,12 @@ function Opcionper(){
     })
     .done(function(data){
         if(data == 'fuera'){
+            $('#THeader').css('display','none');
             $('#Publica').empty();
             $('#Publica').append(`<i class="appfser"></i><div class="smservi col-min full-primary bg-blod">APP Fuera de servicio.</div>`);
         }
         else if(data == 'Mantenimiento'){
+            $('#THeader').css('display','none');
             $('#Publica').empty();
             $('#Publica').append(`<i class="apprepara"></i><div class="smservi col-min full-primary bg-bold">APP en Mantenimiento.</div>`);
         }
