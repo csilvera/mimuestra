@@ -3,6 +3,7 @@ var ojo = 0;
 var codigo = localStorage.setItem("apps",'appmuestra011');
 var dominio = localStorage.setItem('dominio','https://add.sakuraitachi.com/'); 
 var vc = localStorage.setItem("vcompra",'1');
+var che = 1;
 function checkConnection() {
     var networkState = navigator.connection.type;
     var type = undefined;
@@ -29,6 +30,7 @@ var app = {
     },
     onDeviceReady: function() {
         checkConnection();
+        welcome();
        Opcionper();
         document.addEventListener("backbutton", onBackKeyDown, false);
     },
@@ -73,7 +75,10 @@ function welcome(){
         terminos();  
     }
     else if(acceso == 'inicio'){
-        inicio();  
+        inicio();
+    }
+    else if(acceso == 'guia'){
+        Guia();
     }
     else if(acceso == 'restauracontra'){
         OlvidasteContra();  
@@ -97,30 +102,309 @@ function welcome(){
                               </div>`);
     }
 }
+function Guia(){
+    var h = new Date();
+    var ho = h.getHours();
+    var mens = '';
+    if(ho < 12){
+        mens = 'Buenos días';
+    }
+    else if(ho < 19){
+        mens = 'Buenas tardes';
+    }
+    else if(ho < 24 ){
+        mens = 'Buenas noches';
+    }
+    $('#THeader').css('display','none');
+    $('#Publica').empty();
+    $('#Publica').append(`<div class="tit-sim col-min Jum-primary bg-bold">Tienda simple</div><i class="ini-wel"></i><div id="GuiaU"> <div class="boca-saluda"><div class="txt-ini col-min ">Hola `+mens+`</div> </div><div class="boca-ofrece"><div class="txt-ini col-min ">Te ofrecemos la posibilidad de automatizar tu negocio </div> </div></div>
+    <div class="btn btn-primary continua" id="Ntipon">Continuar</div>`);
+}
 function inicio(){
-    $('#THeader').css('display','block');;
+    $('#THeader').css('display','block');
     $('#text-1').css('padding-top','5px');
     $('#text-1').text('Iniciar sesión');
     $('#opc-2').load('opciones/nada.html');
     $('#opc-1').load('opciones/nada.html');
     $('#Publica').empty();
     $('#Publica').append(`<form method="get" id="IniciaSesion">
-        <div class="username let-seg col-min" style="margin-top: 40px;">Seudónimo o correo</div>
-        <input type="text" placeholder="Ingrese Seudónimo o correo" class="nick-u let-seg" id="AliasCor" name="namein" maxlength="50" onpaste="return false"  />
+        <div class="username let-primary col-min bg-bold" style="margin-top: 40px;">Seudónimo o correo</div>
+        <input type="text" placeholder="Ingrese Seudónimo o correo" class="nick-u let-seg bord" id="AliasCor" name="namein" maxlength="50" onpaste="return false"  />
         <div id="InfoAliasCorre"></div>
-        <div class="pass-u col-min">Contraseña</div>
-        <input type="password" name="contra" placeholder="Ingrese contraseña" class="passk-u col-primary let-seg" id="ContraS" maxlength="15" onpaste="return false" />
+        <div class="pass-u let-primary col-min bg-bold">Contraseña</div>
+        <input type="password" name="contra" placeholder="Ingrese contraseña" class="passk-u col-primary let-seg bord" id="ContraS" maxlength="15" onpaste="return false" />
         <i class="ico-pass" id="OjoPun"></i>
         <div id="InfoContras"></div>
-        <div class="Olv let-seg" id="Olvidast">¿Olvidaste tu contraseña. ?</div>
-         <div class="Aly let-seg" id="helpay">¿Necesitas ayuda. ?</div>
-        <div class="Regis let-seg" id="registaho">Registrate ahora.</div>
+        <div class=" btn btn-light continuar-olv" id="Olvidast">¿Olvidaste tu contraseña. ?</div>
+         <div class="btn btn-light continuar-al" id="helpay">¿Necesitas ayuda. ?</div>
+        <div class="btn btn-light continuar" id="registaho">Registrate ahora.</div>
+        <div class="btn btn-success continuar" id="ActGuia">Comprar ahora</div>
         <button type="submit" class="ColorDominante" id="En-sub">
             <i class="ico-send"></i>
         </button>
     </form>`);
     
 }
+$('#Publica').on('click','#ActGuia', function(){
+    localStorage.setItem("sesion", 'guia');
+    welcome();
+});
+$('#Publica').on('click','#Ntipon', function(e){
+    e.preventDefault();
+    $('#GuiaU').empty();
+    $('#GuiaU').append(`<div class="boca-saludas"><div class="txt-ini col-min bg-bold">Selecciona tu negocio</div></div>
+                        <div style="margin-top:30px;">
+                            <li class="list-me col-min" id="Vehicular"> Vehicular</li>
+                            <li class="list-me col-min" id="tecnologia"> Tecnologia, accesorios, ropa, farmacéutica.</li>
+                            <li class="list-me col-min" id="pedidos"> Automercado, panadería, Comida rápida.</li>
+                        </div>`);
+    $('#Ntipon').css('display','none');
+});
+$('#Publica').on('click','.list-me', function(e){
+    e.preventDefault();
+    var n = $(this).attr('id');
+    localStorage.setItem("tipo", n);
+    $('#GuiaU').empty();
+    $('#GuiaU').append(`<div class="boca-saludas"><div class="txt-ini col-min bg-bold">Selecciona el tema</div></div>
+                        <div style="margin-top:30px;">
+                            <li class="list-met col-min" id="tradional"> Tradicional</li>
+                            <li class="list-met col-min" id="moderno"> Moderno</li>
+                        </div>`);
+});
+$('#Publica').on('click','.list-met', function(e){
+    e.preventDefault();
+     var n = $(this).attr('id');
+    localStorage.setItem("tema", n);
+    $('#GuiaU').empty();
+    $('#GuiaU').append(`<div class="boca-cuenta"><div class="txt-ini col-min ">Tu negocio podrás gestionar tus clientes, inventario, ayudar a tus clientes así como también dar tu ubicación física, horario de atención y opciones como abrir o cerrar tu negocio. </div></div>
+    <div class="btn btn-primary continua" id="AceptaCon">Continuar</div>`);
+});
+$('#Publica').on('click','#AceptaCon', function(e){
+    e.preventDefault();
+    $('#GuiaU').empty();
+    $('#GuiaU').append(`<div class="boca-saludas"><div class="txt-ini col-min bg-bold">¿ Desea realizar la compra ahora. ? </div></div>
+    <div class="btn btn-primary desicion" id="AceptaNot">No</div>
+    <div class="btn btn-primary desicion" id="AceptaYes">Si</div>`);
+});
+$('#Publica').on('click','#AceptaNot', function(e){
+    e.preventDefault();
+    localStorage.setItem("sesion", 'inicio');
+    welcome();
+});
+$('#Publica').on('click','#AceptaYes', function(e){
+    e.preventDefault();
+    $('#GuiaU').empty();
+    $('#GuiaU').append(`<div class="boca-saludas"><div class="txt-ini col-min bg-bold">Complete el formulario </div></div>
+    <div style="margin-top:30px;">
+        <form method="get" id="ComprarApp">
+        <div class="username let-primary col-min bg-bold" style="margin-top: 10px;margin-bottom:10px;">Nombre y apellido</div>
+        <input type="text" placeholder="Ingrese nombre y apellido" class="nick-u let-seg bord" id="NombApell" name="nombre" maxlength="50" onpaste="return false"  />
+        <div class="username let-primary col-min bg-bold" style="margin-top: 10px;">Telefono</div>
+        <input type="tel" placeholder="Ingrese telefono" class="nick-u let-seg bord" id="Celular" name="telefono" maxlength="20" onpaste="return false"  />
+        <div class="username let-primary col-min bg-bold" style="margin-top: 10px;">Correo electrónico</div>
+        <input type="text" placeholder="Ingrese correo" class="nick-u let-seg bord" id="MiEmail" name="correo" maxlength="50" onpaste="return false"  />
+        <div class="semana let-primary col-min bg-bold" style="margin-top: 15px;">Tu negocio atiende cuantos clientes a la semana. <div>
+        <div class="radio">
+          <label><input type="radio" name="optradio" value="1" id="clientes" checked>Quiero probar los 10 días gratis</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio" value="2" id="clientes">Menos de 50 clientes.</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio" value="3" id="clientes">100 clientes.</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio" value="4" id="clientes">200  clientes.</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio" value="5" id="clientes">más de un millar de clientes.</label>
+        </div>
+
+        <div class="let-primary col-min">Tu plan es:<i class="let-primary bg-bold col-min planess">gratis</i> </>
+        <div class="let-primary col-min descriplan">Descripcion:500 clientes registrados y 50 articulos en inventario. </div>
+         <button type="submit" class="ColorDominante" id="AceptaComple"> 
+            <i class="ico-send"></i>
+        </button>
+        </form>
+    </div>`);
+});
+$('#Publica').on('change','#clientes', function(e){
+    e.preventDefault();
+    var n = $(this).val();
+    if(n == 1){
+        $('.planess').text('Gratis');
+        $('.descriplan').text('Descripcion:500 clientes registrados y 50 articulos en inventario.');
+    }
+    else if(n == 2){
+        $('.planess').text('Emprendedor');
+        $('.descriplan').text('Descripcion:10.000 clientes registrados y 100 articulos en inventario.');
+    }
+    else if(n == 3){
+        $('.planess').text('Popular');
+        $('.descriplan').text('Descripcion:30.000 clientes registrados y 200 articulos en inventario.');
+    }
+    else if(n == 4){
+        $('.planess').text('Empresarial');
+        $('.descriplan').text('Descripcion:50.000 clientes registrados y 50 articulos en inventario.');
+    }
+    else if(n == 5){
+        $('.planess').text('Corporación');
+        $('.descriplan').text('Descripcion:mas de 100.000 clientes registrados y 50 articulos en inventario.');
+    }
+});
+$('#Publica').on('submit','#ComprarApp', function(e){
+    e.preventDefault();
+    navigator.vibrate(400);
+    //tema, tipo, nombre, tlefono, correo, plan, dominio, codigo.
+    var tema =localStorage.getItem('tema');
+    var tipo =localStorage.getItem('tipo'); 
+    var app = localStorage.getItem('apps');
+    var dom = localStorage.getItem('dominio');
+    var serealiza = $(this).serialize();
+    var devi = device.platform;
+    var nom = $('#NombApell').val();
+    var tel = $('#Celular').val();
+    var correo = $('#MiEmail').val();
+    var plan = $('#clientes').val();
+    var vcorreo = /gmail.com/.test(correo);
+    if(nom.length == 0 & tel.length == 0 & correo.length == 0){
+       $('#NombApell, #Celular, #MiEmail').css('box-shadow', '0 0 0 0.2rem rgba(255,9,9, 0.25)'); 
+        var x = setTimeout(function(){
+           $('#NombApell, #Celular, #MiEmail').css('box-shadow', 'none');
+       },3000);
+        $('footer').show();
+        $('footer').empty();
+        $('footer').css('background-color','#F4511E');
+        $('footer').append(`<i class="appadv"></i><div class="smservis col-ter let-seg bg-bold">Complete el formulario</div>`);
+        var ins = setTimeout(function(){
+            $('footer').hide();
+        },4000);
+    }
+    else if(nom.length < 5){
+        $('#NombrApell').css('box-shadow', '0 0 0 0.2rem rgba(255,9,9, 0.25)'); 
+        var x = setTimeout(function(){
+           $('#NombrApell').css('box-shadow', 'none');
+       },3000);
+        $('footer').show();
+        $('footer').empty();
+        $('footer').css('background-color','#F4511E');
+        $('footer').append(`<i class="appadv"></i><div class="smservis col-ter let-seg bg-bold">Ingrese nombre y apellido</div>`);
+        var ins = setTimeout(function(){
+            $('footer').hide();
+        },4000);
+    }
+    else if(tel.length < 7){
+        $('#Celular').css('box-shadow', '0 0 0 0.2rem rgba(255,9,9, 0.25)'); 
+        var x = setTimeout(function(){
+           $('#Celular').css('box-shadow', 'none');
+       },3000);
+        $('footer').show();
+        $('footer').empty();
+        $('footer').css('background-color','#F4511E');
+        $('footer').append(`<i class="appadv"></i><div class="smservis col-ter let-seg bg-bold">Ingrese tu numero de telefono</div>`);
+        var ins = setTimeout(function(){
+            $('footer').hide();
+        },4000);
+    }
+    else if(vcorreo == false){
+        $('#Celular').css('box-shadow', '0 0 0 0.2rem rgba(255,9,9, 0.25)'); 
+        var x = setTimeout(function(){
+           $('#Celular').css('box-shadow', 'none');
+       },3000);
+        $('footer').show();
+        $('footer').empty();
+        $('footer').css('background-color','#F4511E');
+        $('footer').append(`<i class="appadv"></i><div class="smservis col-ter let-seg bg-bold">Ingrese tu correo gmail.</div>`);
+        var ins = setTimeout(function(){
+            $('footer').hide();
+        },4000);
+    }
+    else{
+        if(navigator.onLine){
+            $('#AceptaComple').attr("disabled", true);
+            $.ajax({
+                url:'https://add.sakuraitachi.com/guiacompra',
+                data:serealiza+'&device='+devi+'&cod='+app+'&tema='+tema+'&dominio='+dom+'&negocio='+tipo,
+                type:'GET',
+                timeout:20000
+            })
+            .done(function(data){
+                if(data == 'ok'){
+                     document.getElementById('helpatencion').reset();
+                    localStorage.setItem("sesion", 'inicio');
+                    welcome();
+                    $('footer').show();
+                    $('footer').empty();
+                    $('footer').css('background-color','#F4511E');
+                    $('footer').append(`<i class="appacom"></i><div class="smservis col-ter let-seg bg-bold">Datos enviados. </div>`);
+                    var ins = setTimeout(function(){
+                        $('footer').hide();
+                        var t = setTimeout(function(){
+                            $('footer').show();
+                            $('footer').empty();
+                            $('footer').css('background-color','#F4511E');
+                            $('footer').append(`<i class="appacom"></i><div class="smservis col-ter let-seg bg-bold">En breve sera atendido por nuestros asesores de ventas. </div>`);
+                            var ins = setTimeout(function(){
+                                $('footer').hide();
+                            },4000);
+                        },1000);
+                    },4000);
+                }else{
+                    $('footer').show();
+                    $('footer').empty();
+                    $('footer').css('background-color','#F4511E');
+                    $('footer').append(`<i class="appadv"></i><div class="smservis col-ter let-seg bg-bold">Error interno</div>`);
+                    var ins = setTimeout(function(){
+                        $('footer').hide();
+                    },4000);
+                }
+            })
+            .fail(function( jqXHR, textStatus, errorThrown ) {
+                if (jqXHR.status == 500) {
+                    console.log('Internal Server Error [500].');
+                    $('.Inestado').show();
+                    $('.Inestado').text('Servidor colapsado.');
+                    var ins = setTimeout(function(){
+                        $('.Inestado').hide();
+                        $('.Inestado').show();
+                        $('.Inestado').text('Reintente luego.');
+                        var y = setTimeout(function(){
+                            $('.Inestado').hide();
+                            console.clear();
+                        },3000)
+                    },3000);
+                }
+                else if (textStatus === 'timeout') {
+                    console.log('Time out error.');
+                    $('.Inestado').show();
+                    $('.Inestado').text('Reintentar');
+                    var ins = setTimeout(function(){
+                        $('.Inestado').hide();
+                        console.clear();
+                    },3000);
+                }
+                else if (textStatus === 'abort') {
+                    console.log('Ajax request aborted.');
+                    $('.Inestado').show();
+                    $('.Inestado').text('Conexión abortada');
+                    var ins = setTimeout(function(){
+                        $('.Inestado').hide();
+                        console.clear();
+                    },3000);
+                }
+            });
+        }
+        else{
+            $('footer').show();
+            $('footer').empty();
+            $('footer').css('background-color','#F4511E');
+            $('footer').append(`<i class="appadv"></i><div class="smservis col-ter let-seg bg-bold">No hay conexion a internet</div>`);
+            var ins = setTimeout(function(){
+                $('footer').hide();
+            },4000);
+        }
+    }
+});
 $('#Publica').on('submit','#IniciaSesion', function(e){
     e.preventDefault();
     navigator.vibrate(400);
@@ -635,7 +919,7 @@ $('#Publica').on('click','#registaho', function(){
     welcome();
 });
 $('#Publica').on('click','#Empezar', function(){
-    localStorage.setItem("sesion", 'inicio');
+    localStorage.setItem("sesion", 'guia');
     welcome();
 });
 $('#Publica').on('click','#terminos', function(){
@@ -651,15 +935,7 @@ $('#opc-1').on('click','#regresainic', function(){
     welcome();
 });
 function Opcionper(){
-    $('#THeader').css('display','none');
-        $('#Publica').empty();
-        $('#Publica').append(`<i class="IcoLogo"></i><div class="Top-text col-min full-primary" >Espere ...</div><div class="versi let-ter">Versión 1.0.0</div>
-                               
-                              <label class="contain" id="terminos">Aceptar terminos y condiciones.
-                                  <input type="checkbox" value="1" checked>
-                                  <span class="checkmark"></span>
-                                </label>
-                              </div>`);
+    
     var app = localStorage.getItem('apps');
     var dom = localStorage.getItem('dominio');
     if(navigator.onLine){
@@ -670,10 +946,12 @@ function Opcionper(){
     })
     .done(function(data){
         if(data == 'fuera'){
+            $('#THeader').css('display','none');
             $('#Publica').empty();
             $('#Publica').append(`<i class="appfser"></i><div class="smservi col-min full-primary bg-blod">APP Fuera de servicio.</div>`);
         }
         else if(data == 'Mantenimiento'){
+            $('#THeader').css('display','none');
             $('#Publica').empty();
             $('#Publica').append(`<i class="apprepara"></i><div class="smservi col-min full-primary bg-bold">APP en Mantenimiento.</div>`);
         }
@@ -735,3 +1013,15 @@ function Opcionper(){
     }
     
 }
+$('#Publica').on('click', '#OjoPun', function(e){
+    e.preventDefault();
+    navigator.vibrate(400);
+    if(ojo == 0){
+        $('#ContraS').attr('type','text');  
+        ojo =1;
+    }
+    else{
+        $('#ContraS').attr('type','password'); 
+        ojo =0;
+    }
+} );

@@ -15,8 +15,8 @@ body{
     border-radius: 4px;
     width: 94%;
     height: 50px;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 0 1em #ccc;
+    border-bottom: 1px solid #aaa;
+    box-shadow: 0 0 1em #bbb;
 }
 #opc-1{
     float: left;
@@ -298,6 +298,26 @@ li, .tit-opc{
     background-size: 18px 18px;
     float: left;
 }
+.appacom{
+    display: block;
+    margin-top: 10px;
+    margin-left: 5%;
+    width: 18px;
+    height: 18px;
+    background: url('../img/comprobar.png');
+    background-size: 18px 18px;
+    float: left;
+}
+.appacan{
+    display: block;
+    margin-top: 10px;
+    margin-left: 5%;
+    width: 18px;
+    height: 18px;
+    background: url('../img/cancelar.png');
+    background-size: 18px 18px;
+    float: left;
+}
 .smservi{
     display: block;
     width: 90%;
@@ -402,8 +422,9 @@ li, .tit-opc{
   position: relative;
   padding-top: 1px;
   padding-left: 25px;
+  margin-top: 10px;
   margin-bottom: 5px;
-  margin-left: 15%;
+  margin-left: 4%;
   cursor: pointer;
   font-size: 12px;
   -webkit-user-select: none;
@@ -743,4 +764,201 @@ li.list-ay{
     overflow: hidden;
 }
 
+/*Guia welcome*/
+.tit-sim{
+    display: inline-block;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+.ini-wel{
+    display: block;
+    width: 92px;
+    height: 92px;
+    margin: auto;
+    margin-top: 35px;
+    background: url('../img/almacenar.png');
+    background-size: 92px 92px;
+}
+.boca-saluda{
+    position: relative;
+    margin-top: 45px;
+    height: 50px;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 4px;
+    background: #F2F3F4;
+     padding-top: 12px;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: center;
+    box-shadow: 1px 5px 8px rgba(244, 81, 30, 0.2);
+}
+.boca-saluda:before {
+    border: 20px solid #eee;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: -40px;
+    left: calc(35% - 15px)
+}
+.boca-saludas{
+    position: relative;
+    margin-top: 45px;
+    height: 60px;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 4px;
+    background: #F2F3F4;
+     padding-top: 12px;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: center;
+    box-shadow: 1px 5px 8px rgba(244, 81, 30, 0.2);
+}
+.boca-saludas:before {
+    border: 20px solid #eee;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 15px)
+}
+.boca-saludar{
+    position: relative;
+    margin-top: 45px;
+    height: 100px;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 4px;
+    background: #F2F3F4;
+     padding-top: 12px;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: center;
+    box-shadow: 1px 5px 8px rgba(244, 81, 30, 0.2);
+}
+.boca-saludar:before {
+    border: 20px solid #eee;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: -40px;
+    left: calc(35% - 15px)
+}
+.boca-cuenta{
+    position: relative;
+    margin-top: 45px;
+    height: 140px;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 4px;
+    background: #F2F3F4;
+     padding-top: 12px;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: center;
+    box-shadow: 1px 5px 8px rgba(244, 81, 30, 0.2);
+}
+.boca-cuenta:before {
+    border: 20px solid #eee;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: -40px;
+    left: calc(65% - 15px)
+}
+.boca-ofrece{
+    position: relative;
+    margin-top: 45px;
+    height: 70px;
+    width: 60%;
+    margin-left: 10%;
+    border-radius: 4px;
+    background: #F2F3F4;
+     padding-top: 12px;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: center;
+    box-shadow: 1px 6px 9px rgba(244, 81, 30, 0.2);
+}
+.boca-ofrece:before {
+    border: 20px solid #eee;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: -40px;
+    left: calc(65% - 15px)
+}
+.continua{
+    margin-right: 10%;
+    float: right;
+    margin-top: 60px;
+    width: 40%;
+    padding: 4px;
+}
+.continuar-olv{
+    display: inline-block;
+    margin-top: 10px;
+    width: 65%;
+    padding: 4px;
+    margin-left: 17.5%;
+}
+.continuar-al{
+    display: inline-block;
+    margin-top: 10px;
+    width: 60%;
+    padding: 4px;
+    margin-left: 20%;
+}
+.continuar{
+    display: inline-block;
+    margin-top: 10px;
+    width: 50%;
+    padding: 4px;
+    margin-left: 25%;
+}
+.desicion{
+    margin-left: 10%;
+    float: left;
+    margin-top: 60px;
+    width: 35%;
+    padding: 4px;
+}
+.list-me, .list-met{
+    display: inline-block;
+    margin-left: 10%;
+    width: 80%;
+    padding: 6px;
+    margin-bottom: 3px;
+    text-align: left;
+    background-color: rgba(215, 219, 221, 0.2);
+}
+#ComprarApp{
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
+}
 
+.semana{
+    width: 94%;
+    padding-left: 3%;
+    padding-top: 14px;
+    margin-bottom: 15px;
+}
+.radio{
+    margin-top: 2px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
