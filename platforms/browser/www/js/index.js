@@ -117,15 +117,16 @@ function Guia(){
     }
     $('#THeader').css('display','none');
     $('#Publica').empty();
-    $('#Publica').append(`<div class="tit-sim col-min Jum-primary bg-bold">Tienda simple</div><i class="ini-wel"></i><div id="GuiaU"> <div class="boca-saluda"><div class="txt-ini col-min ">Hola `+mens+`</div> </div><div class="boca-ofrece"><div class="txt-ini col-min ">Te ofrecemos la posibilidad de automatizar tu negocio </div> </div></div>
-    <div class="btn btn-primary continua" id="Ntipon">Continuar</div>`);
+    $('#Publica').append(`<div class="btn-horario ColorDominante"><i class="ico-h"></i></div><div class="btn-coins ColorDominante"><i class="ico-d"></i></div> <div class="btn-infos ColorDominante"><i class="ico-inf"></i></div><div class="tit-sim col-min Jum-primary bg-bold">Tienda simple</div><i class="ini-wel"></i><div id="GuiaU"> <div class="boca-saluda"><div class="txt-ini col-min ">Hola `+mens+`</div> </div><div class="boca-ofrece"><div class="txt-ini col-min ">Te ofrecemos la posibilidad de automatizar tu negocio </div> </div></div>
+     <div class="btn btn-primary continua" id="Ntipon">Siguiente</div>
+     <div class="btn btn-light continua" id="Nomite">Omitir </div>`);
 }
 function inicio(){
     $('#THeader').css('display','block');
     $('#text-1').css('padding-top','5px');
     $('#text-1').text('Iniciar sesión');
     $('#opc-2').load('opciones/nada.html');
-    $('#opc-1').load('opciones/nada.html');
+    $('#opc-1').load('menu-sin-acceso/menu.html');
     $('#Publica').empty();
     $('#Publica').append(`<form method="get" id="IniciaSesion">
         <div class="username let-primary col-min bg-bold" style="margin-top: 40px;">Seudónimo o correo</div>
@@ -145,6 +146,17 @@ function inicio(){
     </form>`);
     
 }
+$('#opc-1').on('click','#Menu-btn', function(){
+    if(menu == 1){
+        menu = 0;
+        $('.Despl-menu').load('menu/sin-acceso.html');
+        $('.Despl-menu').animate({left:'0%'},'show');
+    }
+    else{
+        menu = 1;
+        $('.Despl-menu').animate({left:'-80%'},'show');
+    }
+});
 $('#Publica').on('click','#ActGuia', function(){
     localStorage.setItem("sesion", 'guia');
     welcome();
@@ -159,6 +171,14 @@ $('#Publica').on('click','#Ntipon', function(e){
                             <li class="list-me col-min" id="pedidos"> Automercado, panadería, Comida rápida.</li>
                         </div>`);
     $('#Ntipon').css('display','none');
+    $('#Nomite').css('display','none');
+});
+$('#Publica').on('click','#Nomite', function(e){
+    e.preventDefault();
+    $('#Ntipon').css('display','none');
+    $('#Nomite').css('display','none');
+    localStorage.setItem("sesion", 'inicio');
+    welcome();
 });
 $('#Publica').on('click','.list-me', function(e){
     e.preventDefault();
@@ -205,7 +225,7 @@ $('#Publica').on('click','#AceptaYes', function(e){
         <input type="text" placeholder="Ingrese correo" class="nick-u let-seg bord" id="MiEmail" name="correo" maxlength="50" onpaste="return false"  />
         <div class="semana let-primary col-min bg-bold" style="margin-top: 15px;">Tu negocio atiende cuantos clientes a la semana. <div>
         <div class="radio">
-          <label><input type="radio" name="optradio" value="1" id="clientes" checked>Quiero probar los 10 días gratis</label>
+          <label><input type="radio" name="optradio" value="1" id="clientes" checked>Quiero probar los 7 días gratis</label>
         </div>
         <div class="radio">
           <label><input type="radio" name="optradio" value="2" id="clientes">Menos de 50 clientes.</label>
